@@ -1,5 +1,7 @@
 {
   "name": "pokedex-js",
+  "type": "module",
+
   "scripts": {
     "test": "jest"
   },
