@@ -21,7 +21,7 @@ function capturarPokemon(treinador, pokemon) {
 function subirLevel(todosPokemons) {
   todosPokemons.forEach((pokemon) => {
     pokemon.level += 1;
-    pokemon = evoluir(pokemon);
+    evoluir(pokemon);
   });
 }
 
