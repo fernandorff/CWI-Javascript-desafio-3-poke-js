@@ -1,6 +1,6 @@
 import pokemons from "./pokemons.json";
 
-export { criarTreinador, capturarPokemon, subirLevel, evoluir };
+export { criarTreinador, capturarPokemon, subirLevel };
 
 function criarTreinador(inputNome, inputIdade, inputPokemonInicial) {
   const treinador = {
