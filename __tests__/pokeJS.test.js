@@ -1,10 +1,5 @@
 import pokemons from "../src/pokemons.json";
-import {
-  capturarPokemon,
-  criarTreinador,
-  subirLevel,
-  evoluir,
-} from "../src/index.js";
+import { capturarPokemon, criarTreinador, subirLevel } from "../src/index.js";
 
 describe("suite de testes do PokeJS", () => {
   const original = pokemons.map((x) => x);
