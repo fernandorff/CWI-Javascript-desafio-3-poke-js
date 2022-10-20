@@ -1,51 +1,38 @@
-import pokemons from "./pokemons.json" assert { type: "json" };
+import pokemons from "./pokemons.json";
 
-let pokemonsLivres = pokemons;
+export { criarTreinador, capturarPokemon, subirLevel, evoluir };
 
 function criarTreinador(inputNome, inputIdade, inputPokemonInicial) {
   const treinador = {
     nome: inputNome,
     idade: inputIdade,
     pokemonInicial: inputPokemonInicial,
-    listaPokemons: [inputPokemonInicial],
+    capturados: [inputPokemonInicial],
   };
   return treinador;
 }
 
 function capturarPokemon(treinador, pokemon) {
-  const capturado = pokemon;
+  treinador.capturados.push(pokemon);
 
-  treinador.listaPokemons.push(capturado);
-
-  subirLevel(treinador.listaPokemons);
+  subirLevel(pokemons);
 }
 
-function subirLevel(lista) {
-  lista.forEach((element) => {
-    element.level += 1;
-    evoluir(element, lista, pokemonsLivres);
+function subirLevel(todosPokemons) {
+  todosPokemons.forEach((pokemon) => {
+    pokemon.level += 1;
+    pokemon = evoluir(pokemon);
   });
 }
 
-function evoluir(element, lista) {
-  if (element.evolucao !== null) {
-    if (element.level == element.evolucao.level) {
+function evoluir(pokemon) {
+  if (pokemon.evolucao !== null) {
+    if (pokemon.level == pokemon.evolucao.level) {
       let evoluido = {
-        ...lista[element.evolucao.id - 1],
-        level: element.evolucao.level,
+        ...pokemons[pokemon.evolucao.id - 1],
+        level: pokemon.evolucao.level,
       };
-      console.log(evoluido);
-      element = evoluido;
+      pokemons[pokemon.id - 1] = evoluido;
     }
   }
 }
-
-const ash = criarTreinador("Ash Ketchum", 12, pokemonsLivres[0]);
-
-capturarPokemon(ash, pokemonsLivres[3]);
-capturarPokemon(ash, pokemonsLivres[6]);
-capturarPokemon(ash, pokemonsLivres[9]);
-capturarPokemon(ash, pokemonsLivres[12]);
-capturarPokemon(ash, pokemonsLivres[14]);
-
-console.log(ash.listaPokemons);
