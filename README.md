@@ -1,3 +1,5 @@
+![image](https://user-images.githubusercontent.com/101672271/197369960-cd9a5fd7-dd36-45f9-8db5-7df7839a0a6d.png)
+
 ![](https://sm.ign.com/t/ign_ap/video/p/pokemon-le/pokemon-lets-go-6-expert-tips_my7j.1280.jpg)
 
 Um mundo pokemon é cheio de aventuras, imagine exemplificar ele por meio de algumas funções JS.
